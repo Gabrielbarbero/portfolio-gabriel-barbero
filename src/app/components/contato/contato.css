@@ -2,30 +2,34 @@ article {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 70vh;
-    width: 100vw;
-
+    min-height: 100vh;
+    width: 100%;
     background-color: #202020;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .contato-form {
-    padding: 20px;
+    padding: 30px;
     background-color: #333333;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 60vh;
     justify-content: center;
-    width: 60vmin;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    min-height: auto;
     box-shadow: 0 0 30px rgb(0, 0, 0);
     border-radius: 15px;
+    box-sizing: border-box;
 }
 
 .campo {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 40vmin;
+    width: 100%;
     margin-top: 20px;
 }
 
@@ -38,7 +42,7 @@ label {
 
 input {
     width: 100%;
-    height: 40px;
+    height: 45px;
     padding: 0 15px;
     border-radius: 20px;
     box-sizing: border-box;
@@ -51,7 +55,7 @@ input {
 
 textarea {
     width: 100%;
-    height: 20vmin;
+    min-height: 150px;
     padding: 15px;
     border-radius: 20px;
     box-sizing: border-box;
@@ -60,29 +64,22 @@ textarea {
     color: white;
     border: 1px solid rgb(80, 80, 80);
     outline: none;
-    resize: none;
+    resize: vertical;
     font-family: inherit;
 }
 textarea::placeholder{
     font-family: 'Cascadia Code', 'Consolas', monospace;
-    color: white;
 }
 input:hover, input:focus, textarea:hover, textarea:focus {
     box-shadow: 0 0 20px rgba(143, 0, 0, 0.4);
     border-color: rgb(120, 120, 120);
-    transform: scale(1.02);
-    font-family: 'Cascadia Code', 'Consolas', monospace;
-}
-
-input::placeholder, textarea::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-    font-family: 'Cascadia Code', 'Consolas', monospace;
 }
 
 button {
-    width: 20%;
+    width: 100%;
+    max-width: 200px;
     height: 45px;
-    margin-top: 10px;
+    margin-top: 30px;
     border-radius: 20px;
     border: none;
     background-color: #8f0000;
@@ -101,4 +98,19 @@ button:hover {
 
 button:active {
     transform: scale(0.95);
+}
+
+@media (max-width: 480px) {
+    article {
+        padding: 10px;
+    }
+
+    .contato-form {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    button {
+        max-width: 100%;
+    }
 }
