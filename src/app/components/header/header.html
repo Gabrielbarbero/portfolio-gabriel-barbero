@@ -1,0 +1,19 @@
+<div class="Teste">
+        <button class="hub"></button>
+        <button class="testandobotoes"(click)="aoclicar()">Projetos</button>
+        <button class="testandobotoes"(click)="aoclicar()">Redes</button>
+
+        <input class="SearchBar"
+        type="text"
+        [(ngModel)]="searchTerm"
+        placeholder="Pesquise Projetos"
+        (input)="onSearch()">
+        <button class="testandobotoes"(click)="aoclicar()">Sobre Mim</button>
+        <button class="testandobotoes"(click)="aoclicar()">Biografia</button>
+
+    
+</div>
+
+@if (clicado()) {
+    <p>...</p>
+}

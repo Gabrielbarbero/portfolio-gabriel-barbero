@@ -1,0 +1,104 @@
+article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    width: 100vw;
+
+    background-color: #202020;
+}
+
+.contato-form {
+    padding: 20px;
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+    justify-content: center;
+    width: 60vmin;
+    box-shadow: 0 0 30px rgb(0, 0, 0);
+    border-radius: 15px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 40vmin;
+    margin-top: 20px;
+}
+
+label {
+    font-family: 'Cascadia Code', 'Consolas', monospace;
+    font-weight: bold;
+    color: #8f0000;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background-color: rgb(45, 45, 45);
+    color: white;
+    border: 1px solid rgb(80, 80, 80);
+    outline: none;
+}
+
+textarea {
+    width: 100%;
+    height: 20vmin;
+    padding: 15px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background-color: rgb(45, 45, 45);
+    color: white;
+    border: 1px solid rgb(80, 80, 80);
+    outline: none;
+    resize: none;
+    font-family: inherit;
+}
+textarea::placeholder{
+    font-family: 'Cascadia Code', 'Consolas', monospace;
+    color: white;
+}
+input:hover, input:focus, textarea:hover, textarea:focus {
+    box-shadow: 0 0 20px rgba(143, 0, 0, 0.4);
+    border-color: rgb(120, 120, 120);
+    transform: scale(1.02);
+    font-family: 'Cascadia Code', 'Consolas', monospace;
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Cascadia Code', 'Consolas', monospace;
+}
+
+button {
+    width: 20%;
+    height: 45px;
+    margin-top: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: #8f0000;
+    color: white;
+    font-family: 'Cascadia Code', monospace;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #b30000;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(143, 0, 0, 0.6);
+}
+
+button:active {
+    transform: scale(0.95);
+}
