@@ -1,5 +1,6 @@
 article {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -8,7 +9,11 @@ article {
     padding: 20px;
     box-sizing: border-box;
 }
-
+h1 {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #cfcfcf;
+    margin-bottom: 12vmin;
+}
 .contato-form {
     padding: 30px;
     background-color: #333333;
@@ -52,7 +57,9 @@ input {
     border: 1px solid rgb(80, 80, 80);
     outline: none;
 }
-
+input::placeholder{
+    color: #cfcfcf;
+}
 textarea {
     width: 100%;
     min-height: 150px;
@@ -69,6 +76,7 @@ textarea {
 }
 textarea::placeholder{
     font-family: 'Cascadia Code', 'Consolas', monospace;
+    color: #cfcfcf;
 }
 input:hover, input:focus, textarea:hover, textarea:focus {
     box-shadow: 0 0 20px rgba(143, 0, 0, 0.4);
@@ -77,7 +85,7 @@ input:hover, input:focus, textarea:hover, textarea:focus {
 
 button {
     width: 100%;
-    max-width: 200px;
+    max-width: 400px;
     height: 45px;
     margin-top: 30px;
     border-radius: 20px;

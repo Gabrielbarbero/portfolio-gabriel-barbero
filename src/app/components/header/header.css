@@ -51,7 +51,7 @@
     min-height: 40px;
     border: none;
     background-color: rgb(27, 27, 27); 
-    color: white;
+    color: #cfcfcf;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -78,7 +78,7 @@
     margin: 10px; 
     transition: all 0.3s ease;
     background-color: rgb(45, 45, 45); 
-    color: white; 
+    color: #cfcfcf; 
     border: 1px solid rgb(80, 80, 80);
     outline: none; 
     box-sizing: border-box;
