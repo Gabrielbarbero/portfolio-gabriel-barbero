@@ -6,9 +6,10 @@ import { Redes } from './components/redes/redes';
 import { Contato } from './components/contato/contato';
 import { Footer } from './components/footer/footer';
 import { Introduction } from './components/introduction/introduction';
+import { Curriculo } from './components/curriculo/curriculo';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Biografia, Redes, Contato, Footer, Introduction],
+  imports: [RouterOutlet, Header, Biografia, Redes, Contato, Footer, Introduction, Curriculo],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

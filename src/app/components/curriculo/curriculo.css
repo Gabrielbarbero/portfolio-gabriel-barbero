@@ -1,0 +1,40 @@
+.background{
+    height: 30vmin;
+    background-color: rgb(32, 32, 32);
+    display: flex;
+}
+.itens-align{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+.text{
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #cfcfcf;
+}
+.btn{
+    width: 100%;
+    max-width: 400px;
+    height: 45px;
+    margin-top: 30px;
+    border-radius: 20px;
+    border: none;
+    background-color: #8f0000;
+    color: white;
+    font-family: 'Cascadia Code', monospace;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+.btn:hover {
+    background-color: #b30000;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(143, 0, 0, 0.6);
+}
+.btn:active {
+    transform: scale(0.95);
+}

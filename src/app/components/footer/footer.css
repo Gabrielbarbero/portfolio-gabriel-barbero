@@ -119,6 +119,17 @@ img:active {
     font-weight: normal;
     opacity: 0.6;
 }
+.redirect{
+    transition: all .3s ease;
+}
+.redirect:hover{
+    color: #d8d8d8;
+    transform: scale(1.1);
+}
+.redirect:active{
+    transform: scale(.95);
+    color: #bebebe;
+}
 
 @media (max-width: 768px) {
     article {
