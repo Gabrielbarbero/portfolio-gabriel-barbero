@@ -22,6 +22,7 @@ article > div:first-of-type {
     display: flex;
     justify-content: center;
     background-color: rgb(59, 59, 59);
+    border-top: solid 50px rgb(34, 34, 34);
     height: 70vh;
     width: 60vw;
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
