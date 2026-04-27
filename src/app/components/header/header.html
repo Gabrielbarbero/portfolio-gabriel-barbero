@@ -1,19 +1,15 @@
 <div class="Teste">
         <button class="hub"></button>
-        <button class="testandobotoes"(click)="aoclicar()">Projetos</button>
-        <button class="testandobotoes"(click)="aoclicar()">Redes</button>
+        <button (click)="DestinyScroll('Projetos')" class="testandobotoes" >Projetos</button>
+        <button class="testandobotoes">Redes</button>
 
         <input class="SearchBar"
         type="text"
         [(ngModel)]="searchTerm"
         placeholder="Pesquise Projetos"
         (input)="onSearch()">
-        <button class="testandobotoes"(click)="aoclicar()">Sobre Mim</button>
-        <button class="testandobotoes"(click)="aoclicar()">Contato</button>
+        <button class="testandobotoes">Sobre Mim</button>
+        <button class="testandobotoes">Contato</button>
 
     
 </div>
-
-@if (clicado()) {
-    <p>...</p>
-}

@@ -8,12 +8,17 @@ import { FormsModule } from '@angular/forms';
 })
 export class Header {
   searchTerm = signal("")
-  clicado = signal(false);
   onSearch() {
     console.log("Buscando por:", this.searchTerm());
   }
-  aoclicar() {
-    console.log("Botão pressionado");
-    this.clicado.set(true);
+  DestinyScroll(idRef: string){
+    const elemento =document.getElementById(idRef)
+    if (elemento){
+          elemento.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+      })
+    }
+    
   }
 }
