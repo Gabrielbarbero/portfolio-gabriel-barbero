@@ -1,1 +1,19 @@
-<p>card works!</p>
+<div class="card">
+    <div class="name">
+        <h1 class="title">{{ projeto.titulo }}</h1>
+    </div>
+    <div class="img">
+        <img class="img-content" [src]="projeto.imagem" [alt]="projeto.titulo">
+    </div>
+    <div class="infos">
+        <h2>{{ projeto.subtitulo }}</h2>
+        <h3>{{ projeto.recursos }}</h3>
+        <div class="type">
+            <div class="linguage-bar" 
+                 [style.width]="projeto.porcentagem + '%'" 
+                 [style.background-color]="projeto.corBarra">
+            </div>
+            <p class="porcent">{{ projeto.porcentagem }}%</p>
+        </div>
+    </div>
+</div>

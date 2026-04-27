@@ -6,6 +6,7 @@ article {
     min-height: 70vh;
     width: 100%;
     overflow: hidden;
+
 }
 
 article > div:first-of-type {
@@ -15,6 +16,7 @@ article > div:first-of-type {
     align-items: flex-start;
     height: 70vh;
     width: 40vw;
+    border-bottom: solid 50px rgb(34, 34, 34);
 }
 
 .background {

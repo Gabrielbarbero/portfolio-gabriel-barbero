@@ -7,9 +7,11 @@ import { Contato } from './components/contato/contato';
 import { Footer } from './components/footer/footer';
 import { Introduction } from './components/introduction/introduction';
 import { Curriculo } from './components/curriculo/curriculo';
+import { Projetos } from './components/projetos/projetos';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Biografia, Redes, Contato, Footer, Introduction, Curriculo],
+  imports: [RouterOutlet, Header, Biografia, Redes, Contato,
+     Footer, Introduction, Curriculo, Projetos],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

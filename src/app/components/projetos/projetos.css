@@ -1,0 +1,72 @@
+.body {
+    width: 100%;
+    min-height: 150vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.title {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-weight: 800;
+    font-size: 50px;
+    color: #000000;
+    letter-spacing: -1px;
+    width: fit-content;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.search-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+.Search-Bar-Content {
+    width: 90%;
+    max-width: 800px;        
+    height: 40px;  
+    padding: 0 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background-color: #f2f2f2; 
+    color: #1a1a1a; 
+    border: 1px solid #999999;
+    outline: none; 
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+.Search-Bar-Content::placeholder {
+    color: #666666;
+}
+
+.Search-Bar-Content:focus {
+    border-color: #333333;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.Search-Bar-Content:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transform: scaleX(1.05);
+}
+
+.Search-Bar-Content:active {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transform: scaleX(1.05);
+    border-color: #666666; 
+}
+
+.cards-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem para a linha de baixo se faltar espaço */
+    justify-content: center;
+    gap: 40px; /* Espaço entre os cards */
+    margin-top: 200px;
+    padding: 20px;
+}
