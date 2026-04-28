@@ -1,5 +1,5 @@
 <div class="Teste">
-    <button class="hub"></button>
+    <button class="hub" (click)="toggleSidebar()"></button>
     <button (click)="DestinyScroll('Projetos')" class="testandobotoes">Projetos</button>
     <button (click)="DestinyScroll('Redes')" class="testandobotoes">Redes</button>
 
@@ -25,3 +25,22 @@
     <button (click)="DestinyScroll('Contato')" class="testandobotoes">Contato</button>
     <button (click)="DestinyScroll('Curriculo')" class="testandobotoes">Curriculo</button>
 </div>
+
+<div class="sidebar" [class.aberta]="isSidebarOpen">
+  <div class="sidebar-header">
+    <h3 style="color: #cfcfcf; margin: 0; font-family: 'Segoe UI', sans-serif;">Navegação</h3>
+    <button class="fechar-btn" (click)="toggleSidebar()">✖</button>
+  </div>
+
+  <nav class="sidebar-links">
+    <a (click)="DestinyScroll('Projetos'); toggleSidebar()">Projetos</a>
+    <a (click)="DestinyScroll('Redes'); toggleSidebar()">Redes</a>
+    <a (click)="DestinyScroll('SobreMim'); toggleSidebar()">Sobre Mim</a>
+    <a (click)="DestinyScroll('Contato'); toggleSidebar()">Contato</a>
+    <a (click)="DestinyScroll('Curriculo'); toggleSidebar()">Currículo</a>
+  </nav>
+</div>
+
+@if (isSidebarOpen) {
+  <div class="overlay" (click)="toggleSidebar()"></div>
+}

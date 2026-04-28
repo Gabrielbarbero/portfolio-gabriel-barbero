@@ -10,11 +10,20 @@ import { FormsModule } from '@angular/forms';
 })
 export class Header {
   searchTerm = signal("");
+  
+  // --- ESTADO DA BARRA LATERAL ---
+  isSidebarOpen: boolean = false;
 
-  // IDs ajustados para bater com os títulos gerados no componente de Projetos
+  toggleSidebar(): void {
+    this.isSidebarOpen = !this.isSidebarOpen;
+  }
+
+  // --- LÓGICA DA ABA ---
+  selectedProject = signal<any>(null);
+
   private projects = signal([
-    { id: 'Andromeda Void', name: 'Andromeda Void' },
-    { id: 'Portifolio', name: 'Portfólio' }
+    { id: 'Andromeda Void', name: 'Andromeda Void', description: 'Descrição detalhada do projeto Andromeda Void, tecnologias usadas, etc.' },
+    { id: 'Portifolio', name: 'Portfólio', description: 'Meu portfólio pessoal feito com Angular e TypeScript.' }
   ]);
 
   filteredProjects = computed(() => {
@@ -39,8 +48,17 @@ export class Header {
     if (elemento) {
       elemento.scrollIntoView({
         behavior: "smooth",
-        block: "center" // Coloquei center para o card ficar no meio da tela
+        block: "center"
       });
     }
+  }
+
+  // --- FUNÇÕES DA ABA ---
+  openDetails(project: any) {
+    this.selectedProject.set(project);
+  }
+
+  closeDetails() {
+    this.selectedProject.set(null);
   }
 }
