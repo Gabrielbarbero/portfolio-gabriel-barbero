@@ -1,3 +1,4 @@
+/* --- Seções e Layout Geral --- */
 .Teste {
     background-color: rgb(27, 27, 27);
     text-align: center;
@@ -9,6 +10,7 @@
     padding: 10px;
 }
 
+/* --- Botão HUB (Menu) --- */
 .hub {
     position: fixed;
     top: 15px; 
@@ -45,6 +47,7 @@
     background-color: rgb(20, 20, 20);
 }
 
+/* --- Botões de Navegação --- */
 .testandobotoes {
     margin: 5px;
     height: 10vmin;
@@ -69,13 +72,13 @@
     transform: scale(0.95);
 }
 
+/* --- Barra de Pesquisa --- */
 .SearchBar {
-    width: 90%;
+    width: 100%; /* Agora controlada pelo container pai */
     max-width: 500px;
     height: 40px;  
     padding: 0 15px;
     border-radius: 20px;
-    margin: 10px; 
     transition: all 0.3s ease;
     background-color: rgb(45, 45, 45); 
     color: #cfcfcf; 
@@ -84,13 +87,8 @@
     box-sizing: border-box;
 }
 
-.SearchBar:hover {
+.SearchBar:hover, .SearchBar:focus {
     box-shadow: 0 0 20px rgba(87, 87, 87, 0.4);
-    transform: scaleX(1.05);
-}
-
-.SearchBar:focus {
-    box-shadow: 0 0 15px rgba(87, 87, 87, 0.4);
     transform: scaleX(1.05);
     border-color: rgb(120, 120, 120); 
 }
@@ -99,15 +97,60 @@
     color: white;
 }
 
+/* --- Lógica de Recomendações (Dropdown) --- */
+.search-container {
+    position: relative; /* Necessário para o dropdown flutuar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.recommendations-list {
+    position: absolute;
+    top: 45px; /* Aparece logo abaixo da SearchBar */
+    width: 98%;
+    background-color: rgb(35, 35, 35);
+    border: 1px solid rgb(80, 80, 80);
+    border-radius: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.recommendations-list li {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 12px 20px;
+    color: #cfcfcf;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.recommendations-list li:hover {
+    background-color: rgb(60, 60, 60);
+    color: white;
+}
+
+.recommendations-list li:not(:last-child) {
+    border-bottom: 1px solid rgb(50, 50, 50);
+}
+
+/* --- Responsividade --- */
 @media (max-width: 768px) {
     .Teste {
         flex-direction: column;
         padding-top: 60px;
     }
 
-    .SearchBar {
+    .search-container {
         width: 95%;
-        margin: 10px 0;
     }
 
     .SearchBar:hover, .SearchBar:focus {
@@ -116,5 +159,10 @@
 
     .testandobotoes {
         width: 80%;
+    }
+
+    .recommendations-list {
+        width: 100%;
+        top: 42px;
     }
 }

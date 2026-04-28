@@ -1,17 +1,27 @@
-
 <div class="body" id="Projetos"> 
     <h1 class="title">Projetos</h1>  
-    <div class="search-bar">
+    
+    <div class="search-container">
         <input class="Search-Bar-Content"
-        type="text"
-        [(ngModel)]="searchTerm"
-        placeholder="Pesquise Projetos"
-        (input)="onSearch()">
+               type="text" 
+               [(ngModel)]="searchTerm" 
+               placeholder="Pesquise Projetos" 
+               (input)="onSearch()">
+
+        @if (searchTerm() && projetosFiltrados().length > 0) {
+            <ul class="recommendations-list">
+                @for (item of projetosFiltrados(); track item.titulo) {
+                    <li (click)="scrollToProject(item.titulo)">
+                        {{ item.titulo }}
+                    </li>
+                }
+            </ul>
+        }
     </div>
 
     <div class="cards-container">
         @for (item of projetosFiltrados(); track item.titulo) {
-            <app-card [projeto]="item"></app-card>
+            <app-card [id]="item.titulo" [projeto]="item"></app-card>
         }
     </div>
 </div>

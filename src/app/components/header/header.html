@@ -1,15 +1,27 @@
 <div class="Teste">
-        <button class="hub"></button>
-        <button (click)="DestinyScroll('Projetos')" class="testandobotoes" >Projetos</button>
-        <button class="testandobotoes">Redes</button>
+    <button class="hub"></button>
+    <button (click)="DestinyScroll('Projetos')" class="testandobotoes">Projetos</button>
+    <button (click)="DestinyScroll('Redes')" class="testandobotoes">Redes</button>
 
+    <div class="search-container">
         <input class="SearchBar"
-        type="text"
-        [(ngModel)]="searchTerm"
-        placeholder="Pesquise Projetos"
-        (input)="onSearch()">
-        <button class="testandobotoes">Sobre Mim</button>
-        <button class="testandobotoes">Contato</button>
+               type="text"
+               [(ngModel)]="searchTerm"
+               placeholder="Pesquise Projetos"
+               (input)="onSearch()">
+        
+        @if (filteredProjects().length > 0 && searchTerm()) {
+            <ul class="recommendations-list">
+                @for (project of filteredProjects(); track project.id) {
+                    <li (click)="selectProject(project.id)">
+                        {{ project.name }}
+                    </li>
+                }
+            </ul>
+        }
+    </div>
 
-    
+    <button (click)="DestinyScroll('SobreMim')" class="testandobotoes">Sobre Mim</button>
+    <button (click)="DestinyScroll('Contato')" class="testandobotoes">Contato</button>
+    <button (click)="DestinyScroll('Curriculo')" class="testandobotoes">Curriculo</button>
 </div>

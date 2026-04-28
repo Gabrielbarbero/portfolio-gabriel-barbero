@@ -6,4 +6,13 @@ import { Component } from '@angular/core';
   templateUrl: './footer.html',
   styleUrl: './footer.css',
 })
-export class Footer {}
+export class Footer {
+  DestinyScroll(idRef: string){
+    const elemento =document.getElementById(idRef)
+    if (elemento){
+          elemento.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+      })}
+    }
+}
