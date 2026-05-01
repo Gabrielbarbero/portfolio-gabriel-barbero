@@ -1,125 +1,127 @@
-    /* --- Estrutura Principal --- */
-    .body {
-        width: 100%;
-        min-height: 150vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0;
-        background-color: #ffffff; /* Ou a cor de fundo que você preferir */
-    }
+.body {
+    width: 100%;
+    min-height: 150vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    background-color: #ffffff;
+}
 
+.title {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-weight: 800;
+    font-size: clamp(30px, 8vw, 50px);
+    color: #000000;
+    letter-spacing: -1px;
+    width: 90%;
+    max-width: fit-content;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.search-container {
+    width: 90%;
+    max-width: 800px;
+    margin-top: 10vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+}
+
+.search-bar-content {
+    width: 100%;
+    max-width: 100%;
+    height: 40px;  
+    padding: 0 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background-color: #f2f2f2; 
+    color: #1a1a1a; 
+    border: 1px solid #999999;
+    outline: none; 
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+.search-bar-content:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transform: scaleX(1.02);
+}
+
+.search-bar-content:focus {
+    border-color: #333333;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar-content::placeholder {
+    color: #665665;
+}
+
+.recommendations-list {
+    position: absolute;
+    top: 45px;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #999999;
+    border-radius: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.recommendations-list li {
+    padding: 12px 20px;
+    color: #1a1a1a;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #eee;
+}
+
+.recommendations-list li:last-child {
+    border-bottom: none;
+}
+
+.recommendations-list li:hover {
+    background-color: #f2f2f2;
+    color: #000;
+}
+
+.cards-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 20px; 
+    margin-top: 50px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
     .title {
-        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-        font-weight: 800;
-        font-size: 50px;
-        color: #000000;
-        letter-spacing: -1px;
-        width: fit-content;
-        margin-bottom: 2rem;
-        text-align: center;
+        margin-bottom: 1.5rem;
     }
 
-    /* --- Container da Pesquisa (Onde a mágica acontece) --- */
     .search-container {
-        width: 90%;
-        max-width: 800px;
-        margin-top: 10vh;
-        position: relative; /* CRÍTICO: Mantém a lista de sugestões presa à barra */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        z-index: 100; /* Garante que fique acima dos cards */
+        margin-top: 5vh;
     }
 
-    .Search-Bar-Content {
-        width: 120vmin;
-        height: 40px;  
-        padding: 0 20px;
-        border-radius: 20px;
-        transition: all 0.3s ease;
-        background-color: #f2f2f2; 
-        color: #1a1a1a; 
-        border: 1px solid #999999;
-        outline: none; 
-        box-sizing: border-box;
-        font-weight: 500;
+    .search-bar-content:hover {
+        transform: none;
     }
 
-    /* Efeitos de Interação */
-    .Search-Bar-Content:hover {
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        transform: scaleX(1.05);
-    }
-
-    .Search-Bar-Content:focus {
-        border-color: #333333;
-        background-color: #ffffff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .Search-Bar-Content::placeholder {
-        color: #665665;
-    }
-
-    /* --- Lista de Recomendações (Dropdown) --- */
-    .recommendations-list {
-        position: absolute;
-        top: 45px;          /* Aparece logo abaixo do input */
-        width: 95%;         /* Largura levemente menor que o input para estética */
-        background-color: #ffffff;
-        border: 1px solid #999999;
-        border-radius: 12px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        z-index: 1000;      /* Garante que flutue SOBRE os cards */
-        overflow: hidden;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    .recommendations-list li {
-        padding: 12px 20px;
-        color: #1a1a1a;
-        text-align: left;
-        cursor: pointer;
-        font-family: 'Segoe UI', sans-serif;
-        transition: all 0.2s ease;
-        border-bottom: 1px solid #eee;
-    }
-
-    .recommendations-list li:last-child {
-        border-bottom: none;
-    }
-
-    .recommendations-list li:hover {
-        background-color: #f2f2f2;
-        color: #000;
-    }
-
-    /* --- Container dos Cards --- */
     .cards-container {
-        width: 100%;
-        max-width: 1200px;
-        display: flex;
-        flex-wrap: wrap; 
-        justify-content: center;
-        gap: 40px; 
-        margin-top: 100px; /* Espaço para não bater na barra de pesquisa */
-        padding: 20px;
+        margin-top: 30px;
+        gap: 15px;
     }
-
-    /* --- Ajustes Responsivos --- */
-    @media (max-width: 768px) {
-        .title {
-            font-size: 35px;
-        }
-
-        .Search-Bar-Content:hover {
-            transform: scaleX(1); /* Desativa o scale no mobile para não bugar o touch */
-        }
-
-        .recommendations-list {
-            width: 100%;
-        }
-    }
+}

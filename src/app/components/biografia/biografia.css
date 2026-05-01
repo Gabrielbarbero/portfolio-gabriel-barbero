@@ -2,40 +2,46 @@
     padding: 10vmin 5%;
     background-color: rgb(39, 39, 39);
     color: white;
+    box-sizing: border-box;
 }
 
 .sobreMim h1 {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     font-weight: 800;
+    font-size: clamp(28px, 5vw, 40px);
     letter-spacing: -1px;
     color: #cfcfcf;
     border-bottom: 1px solid #333;
-    width: 20vmin;
+    width: fit-content;
+    min-width: 150px;
     margin-bottom: 2rem;
 }
 
 .sobreMim h2 {
-    text-align: center;
-    margin: 2rem 30% 1.5rem 30%;
-    font-family: 'Cascadia Code', 'Consolas', 'Courier New', monospace;
-    font-weight: 600;
-    font-size: 1.6rem;
-    color: #8f0000;
-    border-bottom: 1px solid #333;
-    padding-bottom: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    margin: 2rem auto 1.5rem auto;
+    max-width: 600px;
+    font-family: 'Cascadia Code', 'Consolas', 'Courier New', monospace;
+    font-weight: 600;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    color: #8f0000;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
     transition: all 1.5s ease;
 }
 
-
 .sobreMim p {
     font-family: 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
-    font-size: 1rem;
-    line-height: 1.4;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    line-height: 1.6;
     color: #eeeeee;
     margin-bottom: 1.5rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .sobreMim img {
@@ -45,10 +51,12 @@
     margin: 0 8px;
     transition: all 0.3s ease;
 }
-.sobreMim img:hover{
+
+.sobreMim img:hover {
     transform: scale(1.15);
 }
-.sobreMim img:active{
+
+.sobreMim img:active {
     transform: scale(.9);
 }
 
@@ -65,8 +73,23 @@
 }
 
 @media (max-width: 768px) {
+    .sobreMim {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .sobreMim h1 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .sobreMim h2 {
-        margin-left: 10%;
-        margin-right: 10%;
+        max-width: 90%;
+        margin-top: 3rem;
+    }
+
+    .sobreMim p {
+        text-align: justify;
+        hyphens: auto;
     }
 }

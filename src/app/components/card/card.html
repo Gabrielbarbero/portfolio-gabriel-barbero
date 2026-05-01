@@ -1,4 +1,5 @@
-<div class="card">
+<!-- O CARD NORMAL (Ao clicar, abre o modal) -->
+<div class="card" (click)="abrirModal()">
     <div class="name">
         <h1 class="title">{{ projeto.titulo }}</h1>
     </div>
@@ -17,3 +18,30 @@
         </div>
     </div>
 </div>
+
+<!-- O WIDGET / MODAL TELA CHEIA -->
+@if (mostrarDetalhes) {
+    <!-- O fundo escuro (clicar nele fecha o modal) -->
+    <div class="modal-overlay" (click)="fecharModal()">
+        
+        <!-- A caixa do conteúdo (stopPropagation evita que feche ao clicar dentro) -->
+        <div class="modal-content" (click)="$event.stopPropagation()">
+            
+            <button class="close-btn" (click)="fecharModal()">✕</button>
+            
+            <div class="modal-header">
+                <h2>{{ projeto.titulo }}</h2>
+                <span class="modal-subtitle">{{ projeto.subtitulo }}</span>
+            </div>
+
+            <!-- Imagem maior no modal -->
+            <img class="modal-img" [src]="projeto.imagem" [alt]="projeto.titulo">
+            
+            <div class="modal-body">
+                <h3>Tecnologias: {{ projeto.recursos }}</h3>
+                <p class="modal-desc">{{ projeto.descricao || 'Sem descrição disponível para este projeto.' }}</p>
+            </div>
+            
+        </div>
+    </div>
+}

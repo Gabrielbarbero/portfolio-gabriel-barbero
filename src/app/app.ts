@@ -10,7 +10,7 @@ import { Curriculo } from './components/curriculo/curriculo';
 import { Projetos } from './components/projetos/projetos';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Biografia, Redes, Contato,
+  imports: [RouterOutlet, Header, Biografia, Redes,
      Footer, Introduction, Curriculo, Projetos],
   templateUrl: './app.html',
   styleUrl: './app.css'

@@ -14,8 +14,9 @@ footer {
     min-height: 40vh;         
     background-color: rgb(27, 27, 27);
     color: #cfcfcf;
-    padding: 40px 0;
+    padding: 60px 20px;
     text-align: center;
+    box-sizing: border-box;
 }
 
 div p {
@@ -28,11 +29,12 @@ article {
     flex-direction: row;
     justify-content: center; 
     align-items: center;
-    gap: 300px;             
+    gap: clamp(20px, 15vw, 300px); 
     width: 100%;
     margin-bottom: 20px;
     padding: 0 20px;
     box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
 article > div {
@@ -42,36 +44,28 @@ article > div {
     border-bottom: solid 1px rgb(55, 55, 55);       
 }
 
-.nome {
+.nome, .sobrenome {
     width: 100%;
     display: block; 
     text-align: left; 
-    margin-bottom: 10px;
+}
+
+.nome h1, .sobrenome h2 {
+    font-family: 'Cascadia Code', 'Consolas', 'Courier New', monospace;
+    color: #8f0000;
+    margin: 0;
 }
 
 .nome h1 {
-    font-family: 'Cascadia Code', 'Consolas', 'Courier New', monospace;
     margin-left: 5vmin;
-    margin-bottom: 0;
-    color: #8f0000;
-}
-
-.sobrenome {
-    width: 100%;
-    display: block; 
-    text-align: left; 
-    margin-bottom: 10px;
 }
 
 .sobrenome h2 {
-    font-family: 'Cascadia Code', 'Consolas', 'Courier New', monospace;
     margin-left: 5vmin;
-    margin-top: 0;
-    color: #8f0000;
 }
 
 .contato p {
-    margin: 5px 0;
+    margin: 8px 0;
     opacity: 0.8;
 }
 
@@ -80,7 +74,7 @@ article > div {
     justify-content: center;
     align-items: center;
     gap: 15px;
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 .links a {
@@ -89,13 +83,14 @@ article > div {
 }
 
 img {
-    width: 6.5vmin;
-    min-width: 45px;
+    width: 45px;
+    height: 45px;
     display: block;
     background-color: rgb(35, 35, 35);  
     padding: 12px;
     border-radius: 50%;
     transition: all 0.3s ease;
+    object-fit: contain;
 }
 
 img:hover {
@@ -119,19 +114,33 @@ img:active {
     font-weight: normal;
     opacity: 0.6;
 }
-.redirect{
+
+.redirect {
     transition: all .3s ease;
+    cursor: pointer;
 }
-.redirect:hover{
+
+.redirect:hover {
     color: #d8d8d8;
     transform: scale(1.1);
 }
-.redirect:active{
+
+.redirect:active {
     transform: scale(.95);
     color: #bebebe;
 }
 
+@media (max-width: 900px) {
+    article {
+        gap: 50px;
+    }
+}
+
 @media (max-width: 768px) {
+    footer {
+        padding: 40px 15px;
+    }
+
     article {
         flex-direction: column;
         gap: 30px;
@@ -140,6 +149,7 @@ img:active {
     .nome h1, .sobrenome h2 {
         margin-left: 0;
         text-align: center;
+        font-size: 1.8rem;
     }
 
     .nome, .sobrenome {
@@ -148,5 +158,16 @@ img:active {
 
     article > div {
         text-align: center;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .links {
+        gap: 20px;
+    }
+
+    img {
+        width: 40px;
+        height: 40px;
     }
 }

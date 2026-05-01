@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 
-// Definindo a estrutura de dados que o Card vai aceitar
 export interface ProjetoData {
   titulo: string;
   imagem: string;
@@ -8,6 +7,7 @@ export interface ProjetoData {
   recursos: string;
   porcentagem: number;
   corBarra: string;
+  descricao?: string; // Opcional, caso algum não tenha
 }
 
 @Component({
@@ -18,6 +18,15 @@ export interface ProjetoData {
   styleUrl: './card.css',
 })
 export class Card {
-  // O @Input() avisa o Angular que esse dado virá de fora (do app-projetos)
   @Input({ required: true }) projeto!: ProjetoData; 
+
+  mostrarDetalhes: boolean = false;
+
+  abrirModal() {
+    this.mostrarDetalhes = true;
+  }
+
+  fecharModal() {
+    this.mostrarDetalhes = false;
+  }
 }

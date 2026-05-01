@@ -20,7 +20,8 @@ export class Projetos {
       subtitulo: "Tema para VS Code",
       recursos: "JSON, Design",
       porcentagem: 100,
-      corBarra: "#23262E"
+      corBarra: "#23262E",
+      descricao: "",
     },
     {
       titulo: "Portifolio",
@@ -29,6 +30,7 @@ export class Projetos {
       recursos: "Angular, Html, Css, TypeScript",
       porcentagem: 30,
       corBarra: "#23262E" ,
+      descricao: "",
     },
   ]);
 

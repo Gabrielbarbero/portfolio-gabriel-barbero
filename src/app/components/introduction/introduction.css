@@ -1,98 +1,93 @@
-/* 1. Alinhamento lado a lado (A mágica do Flexbox em ROW) */
 .introduction {
     display: flex;
-    flex-direction: row; /* Muda de column para row */
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Reduzido para focar na tela */
+    min-height: 100vh;
     background-color: #ffffff;
-    gap: 6vw; /* Dá o espaço exato entre o terminal e o texto */
+    gap: 6vw;
     padding: 2rem;
-    flex-wrap: wrap; /* Se abrir no celular, ele joga o texto pra baixo automaticamente */
+    flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
-/* 2. Textos alinhados à esquerda */
 .name {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Alinha "Gabriel" e a linha divisória à esquerda */
+    align-items: flex-start;
+    max-width: 100%;
 }
 
 .introduction h1 {
-    margin: 0 0 5px 0; /* Remove a margem gigante */
+    margin: 0 0 5px 0;
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    font-size: clamp(50px, 6vw, 80px); /* Deixa responsivo sem quebrar */
+    font-size: clamp(40px, 8vw, 80px);
     font-weight: 800;
     color: #000;
     line-height: 1;
 }
 
 .introduction h2 {
-    /* Troquei para sem-serifa para ficar idêntico à imagem */
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
     color: #8f0000;
-    font-size: clamp(25px, 3vw, 45px);
+    font-size: clamp(20px, 4vw, 45px);
     font-weight: bold;
     margin: 0;
     padding-top: 10px;
-    border-top: solid 2px #444; /* Essa é a linha que divide o nome do cargo */
-    width: 100%; /* Faz a linha esticar no tamanho do nome */
+    border-top: solid 2px #444;
+    width: 100%;
 }
 
-/* 3. Proporções do Terminal (Mais retangular, igual Mac) */
 .bash {
-    width: 45vw; /* Diminui a largura para caber o texto do lado */
+    width: 100%;
     max-width: 700px;
-    height: 30vw; /* Proporção de notebook */
-    max-height: 450px;
+    height: auto;
+    aspect-ratio: 16 / 10;
     background-color: #121212;
-    margin: 0; /* Remove aquele margin-top enorme */
-    border-radius: 12px; /* Raio menor pra ficar realista */
+    margin: 0;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 
-/* 4. Cabeçalho e Botões */
 .header {
     width: 100%;
-    height: 40px; /* Altura fixa fica melhor que vw/vmin no header */
+    height: 40px;
     background-color: #2d2d2d;
     display: flex;
     align-items: center;
     padding-left: 15px;
+    box-sizing: border-box;
 }
 
 .btns {
     display: flex;
-    gap: 8px; /* Botões mais próximos */
+    gap: 8px;
 }
 
 .btns span {
-    width: 12px; /* Tamanho exato do macOS */
+    width: 12px;
     height: 12px;
     border-radius: 50%;
     transition: all 0.3s ease;
 }
 
-.btns span:hover{
-    transform: scale(1.1);
-}
-.btns span:active{
-    transform: scale(.9);
-}
-.red{ background-color: #FF5F56; }
-.red:active{ background-color: #D85049; }
-.yellow{ background-color: #FFBD2E; }
-.yellow:active{ background-color: #D8A027; }
-.green{ background-color: #27C93F; }
-.green:active{ background-color: #21AA35; }
+.btns span:hover { transform: scale(1.1); }
+.btns span:active { transform: scale(.9); }
 
-/* 5. Área de digitação */
+.red { background-color: #FF5F56; }
+.red:active { background-color: #D85049; }
+.yellow { background-color: #FFBD2E; }
+.yellow:active { background-color: #D8A027; }
+.green { background-color: #27C93F; }
+.green:active { background-color: #21AA35; }
+
 .body-bash {
     padding: 20px;
     color: #e0e0e0;
     font-family: 'Cascadia Code', monospace;
-    font-size: clamp(14px, 2vmin, 18px);
+    font-size: clamp(12px, 1.8vw, 18px);
+    overflow-x: auto;
 }
 
 .body-bash pre code {
@@ -106,3 +101,36 @@
 }
 
 @keyframes blink { 50% { opacity: 0; } }
+
+@media (max-width: 1024px) {
+    .bash {
+        width: 85vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .introduction {
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+        padding: 4rem 1.5rem;
+    }
+
+    .name {
+        align-items: center;
+        text-align: center;
+    }
+
+    .bash {
+        width: 100%;
+        height: auto;
+    }
+
+    .introduction h1 {
+        font-size: clamp(40px, 12vw, 60px);
+    }
+
+    .introduction h2 {
+        font-size: clamp(18px, 5vw, 25px);
+    }
+}

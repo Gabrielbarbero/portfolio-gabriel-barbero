@@ -1,10 +1,10 @@
-<div class="Teste">
-    <button class="hub" (click)="toggleSidebar()"></button>
-    <button (click)="DestinyScroll('Projetos')" class="testandobotoes">Projetos</button>
-    <button (click)="DestinyScroll('Redes')" class="testandobotoes">Redes</button>
+<div class="container-header">
+    <button class="btn-menu-hub" (click)="toggleSidebar()"></button>
+    <button (click)="DestinyScroll('Projetos')" class="btn-nav">Projetos</button>
+    <button (click)="DestinyScroll('Redes')" class="btn-nav">Redes</button>
 
     <div class="search-container">
-        <input class="SearchBar"
+        <input class="search-input"
                type="text"
                [(ngModel)]="searchTerm"
                placeholder="Pesquise Projetos"
@@ -21,9 +21,9 @@
         }
     </div>
 
-    <button (click)="DestinyScroll('SobreMim')" class="testandobotoes">Sobre Mim</button>
-    <button (click)="DestinyScroll('Contato')" class="testandobotoes">Contato</button>
-    <button (click)="DestinyScroll('Curriculo')" class="testandobotoes">Curriculo</button>
+    <button (click)="DestinyScroll('SobreMim')" class="btn-nav">Sobre Mim</button>
+    <button (click)="DestinyScroll('Contato')" class="btn-nav">Contato</button>
+    <button (click)="DestinyScroll('Curriculo')" class="btn-nav">Curriculo</button>
 </div>
 
 <div class="sidebar" [class.aberta]="isSidebarOpen">

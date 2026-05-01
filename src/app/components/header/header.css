@@ -1,8 +1,4 @@
-/* ========================================= */
-/* SEU CSS ORIGINAL (Layout, Botões, Search) */
-/* ========================================= */
-
-.Teste {
+.container-header {
     background-color: rgb(27, 27, 27);
     text-align: center;
     min-height: 10vh;
@@ -13,7 +9,7 @@
     padding: 10px;
 }
 
-.hub {
+.btn-menu-hub {
     position: fixed;
     top: 15px; 
     left: 15px; 
@@ -38,18 +34,18 @@
     background-repeat: no-repeat;
 }
 
-.hub:hover {
+.btn-menu-hub:hover {
     background-color: rgb(45, 45, 45);
     box-shadow: 0 0 10px rgba(87, 87, 87, 0.4);
     transform: scale(1.1);
 }
 
-.hub:active {
+.btn-menu-hub:active {
     transform: scale(0.95);
     background-color: rgb(20, 20, 20);
 }
 
-.testandobotoes {
+.btn-nav {
     margin: 5px;
     height: 10vmin;
     min-height: 40px;
@@ -59,21 +55,32 @@
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
+    padding: 0 20px;
 }
 
-.testandobotoes:hover {
+.btn-nav:hover {
     background-color: rgb(45, 45, 45);
     transform: scaleY(1.3);
     box-shadow: 0 0 15px rgba(87, 87, 87, 0.4);
 }
 
-.testandobotoes:active {
+.btn-nav:active {
     background-color: rgb(17, 17, 17);
     box-shadow: 0 0 15px rgba(124, 124, 124, 0.4);
     transform: scale(0.95);
 }
 
-.SearchBar {
+.search-container {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.search-input {
     width: 100%; 
     max-width: 500px;
     height: 40px;  
@@ -87,24 +94,14 @@
     box-sizing: border-box;
 }
 
-.SearchBar:hover, .SearchBar:focus {
+.search-input:hover, .search-input:focus {
     box-shadow: 0 0 20px rgba(87, 87, 87, 0.4);
     transform: scaleX(1.05);
     border-color: rgb(120, 120, 120); 
 }
 
-.SearchBar::placeholder {
+.search-input::placeholder {
     color: white;
-}
-
-.search-container {
-    position: relative; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    width: 90%;
-    max-width: 500px;
 }
 
 .recommendations-list {
@@ -141,109 +138,96 @@
     border-bottom: 1px solid rgb(50, 50, 50);
 }
 
-
-/* ========================================= */
-/* CSS NOVO (Apenas a Barra Lateral)         */
-/* ========================================= */
-
 .sidebar {
-  position: fixed;
-  top: 0;
-  left: -300px;
-  width: 260px;
-  height: 100vh;
-  background-color: rgb(27, 27, 27); 
-  color: #cfcfcf;
-  transition: left 0.3s ease-in-out;
-  z-index: 2000; /* Coloquei um z-index bem alto pra garantir que fique por cima de tudo */
-  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.7);
-  display: flex;
-  flex-direction: column;
-  border-right: 1px solid rgb(50, 50, 50);
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 260px;
+    height: 100vh;
+    background-color: rgb(27, 27, 27); 
+    color: #cfcfcf;
+    transition: left 0.3s ease-in-out;
+    z-index: 2000; 
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgb(50, 50, 50);
 }
 
 .sidebar.aberta {
-  left: 0; 
+    left: 0; 
 }
 
 .sidebar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  border-bottom: 1px solid rgb(50, 50, 50);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgb(50, 50, 50);
 }
 
 .fechar-btn {
-  background: none;
-  border: none;
-  color: #cfcfcf;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: transform 0.2s;
+    background: none;
+    border: none;
+    color: #cfcfcf;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
 .fechar-btn:hover {
-  transform: scale(1.2);
-  color: white;
+    transform: scale(1.2);
+    color: white;
 }
 
 .sidebar-links {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .sidebar-links a {
-  color: #cfcfcf;
-  text-decoration: none;
-  padding: 15px 10px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  transition: all 0.2s ease;
-  cursor: pointer;
-  border-radius: 8px;
-  margin-bottom: 5px;
+    color: #cfcfcf;
+    text-decoration: none;
+    padding: 15px 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 5px;
 }
 
 .sidebar-links a:hover {
-  background-color: rgb(45, 45, 45);
-  color: white;
-  transform: translateX(5px);
+    background-color: rgb(45, 45, 45);
+    color: white;
+    transform: translateX(5px);
 }
 
 .overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1500; /* Overlay fica entre o resto da página e a barra lateral */
-  backdrop-filter: blur(3px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1500; 
+    backdrop-filter: blur(3px);
 }
 
-/* ========================================= */
-/* SUA RESPONSIVIDADE ORIGINAL               */
-/* ========================================= */
-
 @media (max-width: 768px) {
-    .Teste {
-        flex-direction: column;
-        padding-top: 60px;
+    .container-header {
+        padding-top: 70px;
     }
 
     .search-container {
         width: 95%;
+        order: -1;
     }
 
-    .SearchBar:hover, .SearchBar:focus {
+    .search-input:hover, .search-input:focus {
         transform: scaleX(1);
-    }
-
-    .testandobotoes {
-        width: 80%;
     }
 
     .recommendations-list {
