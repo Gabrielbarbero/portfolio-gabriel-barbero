@@ -39,7 +39,16 @@
             
             <div class="modal-body">
                 <h3>Tecnologias: {{ projeto.recursos }}</h3>
-                <p class="modal-desc">{{ projeto.descricao || 'Sem descrição disponível para este projeto.' }}</p>
+                
+                <!-- LOOP DOS PARÁGRAFOS -->
+                @if (projeto.descricao && projeto.descricao.length > 0) {
+                    @for (paragrafo of projeto.descricao; track paragrafo) {
+                        <p class="modal-desc">{{ paragrafo }}</p>
+                    }
+                } @else {
+                    <p class="modal-desc">Sem descrição disponível para este projeto.</p>
+                }
+                
             </div>
             
         </div>

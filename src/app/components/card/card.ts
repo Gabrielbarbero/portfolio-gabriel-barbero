@@ -7,7 +7,7 @@ export interface ProjetoData {
   recursos: string;
   porcentagem: number;
   corBarra: string;
-  descricao?: string; // Opcional, caso algum não tenha
+  descricao?: string[];
 }
 
 @Component({
