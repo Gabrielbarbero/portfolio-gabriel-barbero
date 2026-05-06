@@ -28,7 +28,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 100;
+    z-index: 99;
 }
 
 .search-bar-content {
@@ -37,7 +37,6 @@
     height: 40px;  
     padding: 0 20px;
     border-radius: 20px;
-    transition: all 0.3s ease;
     background-color: #f2f2f2; 
     color: #1a1a1a; 
     border: 1px solid #999999;
@@ -46,82 +45,79 @@
     font-weight: 500;
 }
 
-.search-bar-content:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    transform: scaleX(1.02);
-}
-
-.search-bar-content:focus {
-    border-color: #333333;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.search-bar-content::placeholder {
-    color: #665665;
-}
-
-.recommendations-list {
-    position: absolute;
-    top: 45px;
-    width: 100%;
-    background-color: #ffffff;
-    border: 1px solid #999999;
-    border-radius: 12px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    z-index: 1000;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.recommendations-list li {
-    padding: 12px 20px;
-    color: #1a1a1a;
-    text-align: left;
-    cursor: pointer;
-    font-family: 'Segoe UI', sans-serif;
-    transition: all 0.2s ease;
-    border-bottom: 1px solid #eee;
-}
-
-.recommendations-list li:last-child {
-    border-bottom: none;
-}
-
-.recommendations-list li:hover {
-    background-color: #f2f2f2;
-    color: #000;
-}
-
+/* --------------------------------------------------
+   CONTAINER DOS CARDS (Fica no projetos.css)
+   -------------------------------------------------- */
 .cards-container {
     width: 100%;
     max-width: 1200px;
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center;
-    gap: 20px; 
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza tudo perfeitamente */
+    gap: 30px; 
     margin-top: 50px;
     padding: 20px;
     box-sizing: border-box;
 }
 
+/* --------------------------------------------------
+   ESTILOS DO CARD (Idealmente colocar no card.css)
+   -------------------------------------------------- */
+.card {
+    width: 380px; /* Largura fixa impede que o card quebre ou estique */
+    max-width: 100%; 
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    overflow: hidden; 
+}
+
+.card img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    display: block;
+    border-bottom: 1px solid #eee; 
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.descricao {
+    overflow-y: auto;
+    flex-grow: 1;
+    margin-bottom: 15px;
+    padding-right: 5px;
+}
+
+/* Scrollbar estilizada */
+.descricao::-webkit-scrollbar {
+    width: 4px;
+}
+.descricao::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+    border-radius: 4px;
+}
+
+/* --------------------------------------------------
+   RESPONSIVIDADE (MOBILE)
+   -------------------------------------------------- */
 @media (max-width: 768px) {
-    .title {
-        margin-bottom: 1.5rem;
-    }
-
-    .search-container {
-        margin-top: 5vh;
-    }
-
-    .search-bar-content:hover {
-        transform: none;
-    }
-
     .cards-container {
-        margin-top: 30px;
-        gap: 15px;
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+        height: fit-content; 
     }
 }
