@@ -9,8 +9,8 @@ import { Component } from '@angular/core';
 export class Curriculo {
   baixarArquivo() {
   const link = document.createElement('a');
-  link.href = 'curriculo.pdf';
-  link.download = 'Curriculo.pdf';
+  link.href = 'Gabriel_Barbero_Desenvolvedor.docx';
+  link.download = 'Gabriel_Barbero_Desenvolvedor.docx';
   link.click();
 }
 }
