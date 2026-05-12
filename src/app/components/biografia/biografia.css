@@ -1,54 +1,57 @@
 .sobreMim {
-    padding: 10vmin 5%;
-    background-color: rgb(39, 39, 39);
-    color: white;
     box-sizing: border-box;
+    padding: 10vmin 5%;
+    color: #ffffff;
+    background-color: #272727;
 }
 
+
 .sobreMim h1 {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    font-weight: 800;
-    font-size: clamp(28px, 5vw, 40px);
-    letter-spacing: -1px;
-    color: #cfcfcf;
-    border-bottom: 1px solid #333;
     width: fit-content;
     min-width: 150px;
     margin-bottom: 2rem;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #cfcfcf;
+    border-bottom: 1px solid #333333;
 }
 
 .sobreMim h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    margin: 2rem auto 1.5rem auto;
     max-width: 600px;
-    font-family: 'Cascadia Code', 'Consolas', 'Courier New', monospace;
-    font-weight: 600;
-    font-size: clamp(1.2rem, 3vw, 1.6rem);
-    color: #8f0000;
-    border-bottom: 1px solid #333;
+    margin: 2rem auto 1.5rem auto;
     padding-bottom: 5px;
+    font-family: 'Cascadia Code', 'Consolas', 'Courier New', monospace;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 600;
+    text-align: center;
+    color: #8f0000;
+    border-bottom: 1px solid #333333;
     transition: all 1.5s ease;
 }
 
 .sobreMim p {
+    max-width: 900px;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
     font-family: 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
     font-size: clamp(0.95rem, 2vw, 1.1rem);
     line-height: 1.6;
     color: #eeeeee;
-    margin-bottom: 1.5rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
 }
+
+
 
 .sobreMim img {
     width: 1.5rem;
     height: auto;
-    vertical-align: middle;
     margin: 0 8px;
+    vertical-align: middle;
     transition: all 0.3s ease;
 }
 
@@ -57,8 +60,9 @@
 }
 
 .sobreMim img:active {
-    transform: scale(.9);
+    transform: scale(0.9);
 }
+
 
 .hidden {
     opacity: 0;
@@ -67,10 +71,12 @@
 }
 
 .show {
+    visibility: visible !important;
     opacity: 1 !important;
     transform: translateY(0) !important;
-    visibility: visible !important;
 }
+
+
 
 @media (max-width: 768px) {
     .sobreMim {
@@ -79,8 +85,8 @@
     }
 
     .sobreMim h1 {
-        margin-left: auto;
         margin-right: auto;
+        margin-left: auto;
     }
 
     .sobreMim h2 {

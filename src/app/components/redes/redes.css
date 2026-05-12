@@ -1,93 +1,115 @@
+/* Layout Principal da Apresentação */
 article {
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: row;
-    min-height: 70vh;
     width: 100%;
+    min-height: 70vh;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
-
 }
 
+/* Container de Texto e Links */
 article > div:first-of-type {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    height: 70vh;
     width: 40vw;
-    border-bottom: solid 50px rgb(34, 34, 34);
+    height: 70vh;
+    border-bottom: 50px solid #222222;
 }
 
+/* Fundo com Recorte Diagonal (Clip-Path) */
 .background {
-    align-items: center;
     display: flex;
     justify-content: center;
-    background-color: rgb(59, 59, 59);
-    border-top: solid 50px rgb(34, 34, 34);
-    height: 70vh;
+    align-items: center;
     width: 60vw;
+    height: 70vh;
+    background-color: #3b3b3b;
+    border-top: 50px solid #222222;
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
+
+
+
+/* Container de Sombra da Imagem */
 .shadow-wrapper {
-    filter: drop-shadow(-50px 0px 0px rgb(34, 34, 34));
     display: flex;
     justify-content: center;
     align-items: center;
+    filter: drop-shadow(-50px 0px 0px #222222);
 }
 
+/* Foto de Perfil */
 .gabriel {
+    display: block;
     width: 40vmin;
     max-width: 350px;
+    border: 5px solid #00000057;
     border-radius: 50%;
-    transition: all .3s ease;
-    display: block;
-    border: solid 5px rgba(0, 0, 0, 0.342);
-    outline: solid 10px rgba(255, 255, 255, 0.226);
+    outline: 10px solid #ffffff39;
+    transition: all 0.3s ease;
 }
 
 .gabriel:hover {
+    box-shadow: 0 0 50px #16161680;
     transform: scale(1.05);
-    box-shadow: 0 0 50px rgba(22, 22, 22, 0.5);
 }
 
+
+
+
+
+/* Título da Seção */
 h1 {
-    padding: 1px;
-    border-bottom: solid 3px rgb(100, 100, 100);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: fit-content;
     margin-left: 10vw;
+    padding: 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.5rem;
+    border-bottom: 3px solid #646464;
 }
 
 .links {
-    text-decoration: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: black;
-    background-color: #eeeeee;
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
     margin-left: 10vw;
-    transition: all 0.3s ease;
-    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
-    padding: 8px 15px;
-    border-radius: 15px;
+    padding: 8px 15px; /* Tamanho original mantido */
+    font-family: 'Cascadia Code', monospace;
     font-size: 0.9rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #8f0000;
+    border: none;
+    border-radius: 20px;
+    transition: all 0.3s ease;
 }
-.links:hover{
+
+.links:hover {
     transform: scale(1.05);
 }
-.links:active{
-    transform: scale(.95);
-    background-color: #c7c7c7 ;
+
+.links:active {
+    background-color: #660000; /* Vermelho mais escuro para o clique */
+    transform: scale(0.95);
 }
+
+/* Ícones das Redes Sociais */
 .redesImg {
     width: 20px;
     height: 20px;
     margin-right: 10px;
 }
+
+
+
+
 
 @media (max-width: 768px) {
     article {
@@ -96,10 +118,10 @@ h1 {
     }
 
     article > div:first-of-type {
+        align-items: center;
         width: 100%;
         height: auto;
         padding: 40px 0;
-        align-items: center;
     }
 
     .background {
@@ -116,7 +138,8 @@ h1 {
         width: 60vmin;
     }
 
-    h1, .links {
+    h1, 
+    .links {
         margin-left: 0;
     }
 

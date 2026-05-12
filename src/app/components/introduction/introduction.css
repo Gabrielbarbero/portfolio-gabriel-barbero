@@ -1,14 +1,14 @@
 .introduction {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
     min-height: 100vh;
-    background-color: #ffffff;
     gap: 6vw;
     padding: 2rem;
-    flex-wrap: wrap;
-    box-sizing: border-box;
+    background-color: #ffffff;
 }
 
 .name {
@@ -18,47 +18,72 @@
     max-width: 100%;
 }
 
+
+
+
 .introduction h1 {
     margin: 0 0 5px 0;
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     font-size: clamp(40px, 8vw, 80px);
     font-weight: 800;
-    color: #000;
     line-height: 1;
+    color: #000000;
 }
 
 .introduction h2 {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
-    color: #8f0000;
-    font-size: clamp(20px, 4vw, 45px);
-    font-weight: bold;
+    width: 100%;
     margin: 0;
     padding-top: 10px;
-    border-top: solid 2px #444;
-    width: 100%;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+    font-size: clamp(20px, 4vw, 45px);
+    font-weight: bold;
+    color: #8f0000;
+    border-top: solid 2px #444444;
 }
+
+
+
+
 
 .bash {
     width: 100%;
     max-width: 700px;
     height: auto;
+    margin: 0;
+    overflow: hidden;
     aspect-ratio: 16 / 10;
     background-color: #121212;
-    margin: 0;
     border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 50px #00000026;
 }
 
 .header {
-    width: 100%;
-    height: 40px;
-    background-color: #2d2d2d;
     display: flex;
     align-items: center;
+    width: 100%;
+    height: 40px;
     padding-left: 15px;
     box-sizing: border-box;
+    background-color: #2d2d2d;
 }
+
+.body-bash {
+    overflow-x: auto;
+    padding: 20px;
+    font-family: 'Cascadia Code', monospace;
+    font-size: clamp(12px, 1.8vw, 18px);
+    color: #e0e0e0;
+}
+
+.body-bash pre code {
+    display: inline-block;
+    min-width: 1px;
+    color: #ffffff !important;
+}
+
+
+
+
 
 .btns {
     display: flex;
@@ -72,35 +97,58 @@
     transition: all 0.3s ease;
 }
 
-.btns span:hover { transform: scale(1.1); }
-.btns span:active { transform: scale(.9); }
-
-.red { background-color: #FF5F56; }
-.red:active { background-color: #D85049; }
-.yellow { background-color: #FFBD2E; }
-.yellow:active { background-color: #D8A027; }
-.green { background-color: #27C93F; }
-.green:active { background-color: #21AA35; }
-
-.body-bash {
-    padding: 20px;
-    color: #e0e0e0;
-    font-family: 'Cascadia Code', monospace;
-    font-size: clamp(12px, 1.8vw, 18px);
-    overflow-x: auto;
+.btns span:hover { 
+    transform: scale(1.1); 
 }
 
-.body-bash pre code {
-    color: #ffffff !important;
-    display: inline-block;
-    min-width: 1px;
+.btns span:active { 
+    transform: scale(0.9); 
 }
+
+.red { 
+    background-color: #ff5f56; 
+}
+
+.red:active { 
+    background-color: #d85049; 
+}
+
+.yellow { 
+    background-color: #ffbd2e; 
+}
+
+.yellow:active { 
+    background-color: #d8a027; 
+}
+
+.green { 
+    background-color: #27c93f; 
+}
+
+.green:active { 
+    background-color: #21aa35; 
+}
+
+
+
+
+
 
 .cursor {
     animation: blink 1s infinite;
 }
 
-@keyframes blink { 50% { opacity: 0; } }
+@keyframes blink { 
+    50% { opacity: 0; } 
+}
+
+
+
+
+
+
+
+
 
 @media (max-width: 1024px) {
     .bash {

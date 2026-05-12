@@ -1,59 +1,66 @@
 body {
-    padding: 0;
     margin: 0;
+    padding: 0;
     overflow-x: hidden;
     font-family: sans-serif;
 }
 
+
+
+
 footer {
     display: flex;
     flex-direction: column;  
-    align-items: center;     
     justify-content: center;  
+    align-items: center;     
+    box-sizing: border-box;
     width: 100%;
-    min-height: 40vh;         
-    background-color: rgb(27, 27, 27);
-    color: #cfcfcf;
+    min-height: 40vh;        
     padding: 60px 20px;
     text-align: center;
-    box-sizing: border-box;
+    color: #cfcfcf;
+    background-color: #1b1b1b;
 }
+
+article {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    gap: clamp(20px, 15vw, 300px); 
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+article > div {
+    flex: none;              
+    text-align: left;
+    border-top: 1px solid #373737;        
+    border-bottom: 1px solid #373737;       
+}
+
+
 
 div p {
     font-family: 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
     font-weight: 800;
 }
 
-article {
-    display: flex;
-    flex-direction: row;
-    justify-content: center; 
-    align-items: center;
-    gap: clamp(20px, 15vw, 300px); 
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 0 20px;
-    box-sizing: border-box;
-    flex-wrap: wrap;
-}
-
-article > div {
-    flex: none;              
-    text-align: left;
-    border-top: solid 1px rgb(55, 55, 55);        
-    border-bottom: solid 1px rgb(55, 55, 55);       
-}
-
-.nome, .sobrenome {
-    width: 100%;
+.nome, 
+.sobrenome {
     display: block; 
+    width: 100%;
     text-align: left; 
 }
 
-.nome h1, .sobrenome h2 {
+.nome h1, 
+.sobrenome h2 {
+    margin: 0;
     font-family: 'Cascadia Code', 'Consolas', 'Courier New', monospace;
     color: #8f0000;
-    margin: 0;
 }
 
 .nome h1 {
@@ -69,41 +76,6 @@ article > div {
     opacity: 0.8;
 }
 
-.links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin: 30px 0;
-}
-
-.links a {
-    text-decoration: none;
-    display: flex;
-}
-
-img {
-    width: 45px;
-    height: 45px;
-    display: block;
-    background-color: rgb(35, 35, 35);  
-    padding: 12px;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    object-fit: contain;
-}
-
-img:hover {
-    background-color: rgb(55, 55, 55);
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-}
-
-img:active {
-    background-color: rgb(17, 17, 17);
-    transform: scale(0.95);
-}
-
 .Copyright {
     margin-top: 20px;
     padding: 0 10px;
@@ -115,9 +87,49 @@ img:active {
     opacity: 0.6;
 }
 
+
+
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.links a {
+    display: flex;
+    text-decoration: none;
+}
+
+/* Ícones das Redes (Imagens) */
+img {
+    display: block;
+    width: 45px;
+    height: 45px;
+    padding: 12px;
+    object-fit: contain;
+    background-color: #232323;  
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+img:hover {
+    background-color: #373737;
+    box-shadow: 0 0 15px #ffffff1a;
+    transform: scale(1.1);
+}
+
+img:active {
+    background-color: #111111;
+    transform: scale(0.95);
+}
+
+/* Classe de Redirecionamento Geral */
 .redirect {
-    transition: all .3s ease;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .redirect:hover {
@@ -126,9 +138,15 @@ img:active {
 }
 
 .redirect:active {
-    transform: scale(.95);
     color: #bebebe;
+    transform: scale(0.95);
 }
+
+
+
+
+
+
 
 @media (max-width: 900px) {
     article {
@@ -146,20 +164,22 @@ img:active {
         gap: 30px;
     }
     
-    .nome h1, .sobrenome h2 {
-        margin-left: 0;
-        text-align: center;
-        font-size: 1.8rem;
-    }
-
-    .nome, .sobrenome {
-        text-align: center;
-    }
-
     article > div {
-        text-align: center;
         width: 100%;
         max-width: 300px;
+        text-align: center;
+    }
+
+    .nome h1, 
+    .sobrenome h2 {
+        margin-left: 0;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .nome, 
+    .sobrenome {
+        text-align: center;
     }
 
     .links {

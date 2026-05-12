@@ -1,54 +1,60 @@
 .background {
-    min-height: 30vmin;
-    background-color: rgb(32, 32, 32);
     display: flex;
-    padding: 40px 20px;
     box-sizing: border-box;
+    min-height: 30vmin;
+    padding: 40px 20px;
+    background-color: #202020;
 }
 
 .itens-align {
-    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    width: 100%;
 }
+
 
 .text {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    color: #cfcfcf;
-    text-align: center;
     font-size: clamp(1rem, 4vw, 1.2rem);
+    text-align: center;
+    color: #cfcfcf;
 }
 
+
+
 .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     max-width: 400px;
     height: 45px;
     margin-top: 30px;
-    border-radius: 20px;
-    border: none;
-    background-color: #8f0000;
-    color: white;
     font-family: 'Cascadia Code', monospace;
     font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #8f0000;
+    border: none;
+    border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    text-decoration: none;
 }
 
 .btn:hover {
     background-color: #b30000;
+    box-shadow: 0 0 25px #8f000099;
     transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(143, 0, 0, 0.6);
 }
 
 .btn:active {
     transform: scale(0.95);
 }
+
+
+
 
 @media (max-width: 768px) {
     .background {
