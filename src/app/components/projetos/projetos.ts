@@ -33,7 +33,7 @@ export class Projetos {
       imagem: "assets/Projetos/Portifolio.png",
       subtitulo: "Front-end do Portifolio",
       recursos: "Angular, Html, Css, TypeScript",
-      porcentagem: 30,
+      porcentagem: 100,
       corBarra: "#23262E" ,
       descricao: [
         "Este portfólio foi projetado e desenvolvido com um forte foco no Front-End, visando criar uma experiência de usuário (UX) imersiva e autêntica. O design visual foi cuidadosamente construído para refletir minha identidade como desenvolvedor, adotando uma estética customizada no estilo terminal (Command Line Interface), combinando funcionalidade técnica com um visual limpo e voltado para a produtividade.",
