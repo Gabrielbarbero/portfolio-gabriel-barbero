@@ -1,59 +1,26 @@
-# EstudandoAngular
+# Gabriel Barbero Colombo | Portfólio Pessoal 🚀
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
+Um portfólio web full-stack desenvolvido para apresentar meus projetos, habilidades e jornada na programação. O design do projeto foi construído com foco em uma experiência de usuário minimalista e focada em produtividade, inspirada em interfaces de linha de comando (CLI) e ambientes de terminal.
 
-## Development server
+## 🛠️ Tecnologias Utilizadas
 
-To start a local development server, run:
+Este projeto foi construído utilizando as seguintes tecnologias:
 
-```bash
-ng serve
-```
+*   **Front-end:** Angular, TypeScript, HTML5, CSS3
+*   **Design:** UI/UX Minimalista / Terminal-inspired
+*   **Funcionalidades em Destaque:** Renderização dinâmica de cards de projetos e sistema de busca integrado.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 💻 Sobre Mim
 
-## Code scaffolding
+Sou estudante do 3º semestre de Ciência da Computação, apaixonado por resolver problemas através de código e por criar designs focados em eficiência. Tenho um forte direcionamento para o desenvolvimento de projetos práticos e estudo contínuo. 
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+**Minhas principais stacks e conhecimentos incluem:**
+*   **Linguagens:** C#, Java, Python, TypeScript/JavaScript
+*   **Banco de Dados:** SQL (MySQL)
+*   **Frameworks/Ferramentas:** Angular, Spring Boot
 
-```bash
-ng generate component component-name
-```
+## 📂 Projetos em Destaque
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Aqui estão alguns dos projetos que você encontrará no portfólio:
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+*   **[Tema Andromeda Void](https://marketplace.visualstudio.com/items?itemName=GabrielBarbero.andromeda-Theme):** Um tema customizado para o VS Code com foco em conforto visual e estética imersiva (atualmente com mais de 100 downloads).
