@@ -32,7 +32,7 @@ export class Projetos {
       titulo: "Portifolio",
       imagem: "assets/Projetos/Portifolio.png",
       subtitulo: "Front-end do Portifolio",
-      recursos: "Angular, Html, Css, TypeScript",
+      recursos: "Angular, HTML, CSS, TypeScript",
       porcentagem: 100,
       corBarra: "#23262E" ,
       descricao: [
@@ -44,6 +44,19 @@ export class Projetos {
         "• SPA (Single Page Application): Sistema de roteamento implementado para garantir transições rápidas e sem recarregamento de página."
       ]
     },
+{
+  titulo: "Base Barber",
+  imagem: "assets/Projetos/Base-Barber.png",
+  subtitulo: "Landing Page",
+  recursos: "React,HTML, CSS, JavaScript",
+  porcentagem: 100,
+  corBarra: "#23262E",
+  descricao: [
+    "Landing page desenvolvida para uma barbearia fictícia, criada como modelo base para apresentação a clientes reais.",
+    "O projeto foca em identidade visual forte, com paleta preta e amarela, hierarquia de informação clara e fluxo pensado para conversão.",
+    "Desenvolvida do zero sem template pronto, com seções de portfólio de trabalhos, tabela de preços, sobre mim e contato."
+  ]
+}
   ]);
 
   projetosFiltrados = computed(() => {

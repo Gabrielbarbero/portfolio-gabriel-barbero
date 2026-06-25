@@ -8,9 +8,6 @@
     background-color: #ffffff;
 }
 
-
-
-
 .title {
     width: 90%;
     max-width: fit-content;
@@ -22,9 +19,6 @@
     text-align: center;
     letter-spacing: -1px;
 }
-
-
-
 
 .search-container {
     position: relative;
@@ -51,9 +45,6 @@
     outline: none; 
     transition: all 0.2s ease;
 }
-
-
-
 
 .recommendations-list {
     position: absolute;
@@ -83,19 +74,11 @@
 .recommendations-list li:hover {
     color: #000000;
     background-color: #d3d3d3;  
-
-
 }
 
 .recommendations-list li:not(:last-child) {
     border-bottom: 1px solid #323232;
 }
-
-
-
-
-
-
 
 .cards-container {
     display: flex;
@@ -144,12 +127,6 @@
     overflow-y: auto;
 }
 
-
-
-
-
-
-
 .descricao::-webkit-scrollbar {
     width: 4px;
 }
@@ -159,18 +136,32 @@
     border-radius: 4px;
 }
 
-
-
-
-
+/* --- AJUSTES PARA MOBILE --- */
 @media (max-width: 768px) {
+    .search-container {
+        margin-top: 5vh; 
+    }
+
+    .title {
+        margin-bottom: 1rem; 
+    }
+
     .cards-container {
-        gap: 20px;
-        padding: 15px;
+        margin-top: 30px; 
+        gap: 15px; 
+        padding: 10px; 
     }
 
     .card {
         width: 100%;
         height: fit-content; 
+    }
+
+    .card-content {
+        padding: 15px; 
+    }
+
+    .descricao {
+        margin-bottom: 10px; 
     }
 }

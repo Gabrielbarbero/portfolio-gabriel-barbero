@@ -1,5 +1,8 @@
 <div class="container-header">
     <button class="btn-menu-hub" (click)="toggleSidebar()"></button>
+    
+    <h1 class="header-logo-mobile">Gabriel</h1>
+
     <button (click)="DestinyScroll('Projetos')" class="btn-nav">Projetos</button>
     <button (click)="DestinyScroll('Redes')" class="btn-nav">Redes</button>
 
@@ -22,24 +25,41 @@
     </div>
 
     <button (click)="DestinyScroll('SobreMim')" class="btn-nav">Sobre Mim</button>
-    <button (click)="DestinyScroll('Contato')" class="btn-nav">Contato</button>
     <button (click)="DestinyScroll('Curriculo')" class="btn-nav">Curriculo</button>
 </div>
 
 <div class="sidebar" [class.aberta]="isSidebarOpen">
-  <div class="sidebar-header">
-    <h3 style="color: #cfcfcf; margin: 0; font-family: 'Segoe UI', sans-serif;">Navegação</h3>
-    <button class="fechar-btn" (click)="toggleSidebar()">✖</button>
-  </div>
+    <div class="sidebar-header">
+        <h3 class="sidebar-title">Navegação</h3>
+        <button class="fechar-btn" (click)="toggleSidebar()">✖</button>
+    </div>
 
-  <nav class="sidebar-links">
-    <a (click)="DestinyScroll('Projetos'); toggleSidebar()">Projetos</a>
-    <a (click)="DestinyScroll('Redes'); toggleSidebar()">Redes</a>
-    <a (click)="DestinyScroll('SobreMim'); toggleSidebar()">Sobre Mim</a>
-    <a (click)="DestinyScroll('Curriculo'); toggleSidebar()">Currículo</a>
-  </nav>
+    <div class="search-container-sidebar">
+        <input class="search-input"
+               type="text"
+               [(ngModel)]="searchTerm"
+               placeholder="Pesquise Projetos"
+               (input)="onSearch()">
+        
+        @if (filteredProjects().length > 0 && searchTerm()) {
+            <ul class="recommendations-list recommendations-list--sidebar">
+                @for (project of filteredProjects(); track project.id) {
+                    <li (click)="selectProject(project.id); toggleSidebar()">
+                        {{ project.name }}
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+
+    <nav class="sidebar-links">
+        <a (click)="DestinyScroll('Projetos'); toggleSidebar()">Projetos</a>
+        <a (click)="DestinyScroll('Redes'); toggleSidebar()">Redes</a>
+        <a (click)="DestinyScroll('SobreMim'); toggleSidebar()">Sobre Mim</a>
+        <a (click)="DestinyScroll('Curriculo'); toggleSidebar()">Currículo</a>
+    </nav>
 </div>
 
 @if (isSidebarOpen) {
-  <div class="overlay" (click)="toggleSidebar()"></div>
+    <div class="overlay" (click)="toggleSidebar()"></div>
 }

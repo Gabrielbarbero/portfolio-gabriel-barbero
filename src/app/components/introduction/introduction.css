@@ -1,3 +1,6 @@
+/* =========================================
+   1. INTRODUÇÃO E TERMINAL (SEU CSS ORIGINAL - DESKTOP)
+   ========================================= */
 .introduction {
     display: flex;
     flex-direction: row;
@@ -17,9 +20,6 @@
     align-items: flex-start;
     max-width: 100%;
 }
-
-
-
 
 .introduction h1 {
     margin: 0 0 5px 0;
@@ -41,10 +41,6 @@
     border-top: solid 2px #444444;
 }
 
-
-
-
-
 .bash {
     width: 100%;
     max-width: 700px;
@@ -57,7 +53,7 @@
     box-shadow: 0 20px 50px #00000026;
 }
 
-.header {
+.bash-header {
     display: flex;
     align-items: center;
     width: 100%;
@@ -75,110 +71,70 @@
     color: #e0e0e0;
 }
 
+.body-bash pre {
+    margin: 0;
+    white-space: pre-wrap; /* Força quebra de linha em textos gigantes */
+    word-break: break-word;
+}
+
 .body-bash pre code {
-    display: inline-block;
-    min-width: 1px;
     color: #ffffff !important;
 }
 
+/* Botoes do Terminal */
+.btns { display: flex; gap: 8px; }
+.btns span { width: 12px; height: 12px; border-radius: 50%; transition: all 0.3s ease; }
+.btns span:hover { transform: scale(1.1); }
+.btns span:active { transform: scale(0.9); }
+.red { background-color: #ff5f56; } .red:active { background-color: #d85049; }
+.yellow { background-color: #ffbd2e; } .yellow:active { background-color: #d8a027; }
+.green { background-color: #27c93f; } .green:active { background-color: #21aa35; }
+.cursor { animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
 
 
-
-
-.btns {
-    display: flex;
-    gap: 8px;
-}
-
-.btns span {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-}
-
-.btns span:hover { 
-    transform: scale(1.1); 
-}
-
-.btns span:active { 
-    transform: scale(0.9); 
-}
-
-.red { 
-    background-color: #ff5f56; 
-}
-
-.red:active { 
-    background-color: #d85049; 
-}
-
-.yellow { 
-    background-color: #ffbd2e; 
-}
-
-.yellow:active { 
-    background-color: #d8a027; 
-}
-
-.green { 
-    background-color: #27c93f; 
-}
-
-.green:active { 
-    background-color: #21aa35; 
-}
-
-
-
-
-
-
-.cursor {
-    animation: blink 1s infinite;
-}
-
-@keyframes blink { 
-    50% { opacity: 0; } 
-}
-
-
-
-
-
-
-
-
-
+/* =========================================
+   4. MEDIA QUERIES (APENAS CORREÇÕES PARA MOBILE)
+   ========================================= */
 @media (max-width: 1024px) {
-    .bash {
-        width: 85vw;
-    }
+    .bash { width: 85vw; }
 }
 
 @media (max-width: 768px) {
+    /* Ajustes da Introdução (Removendo o buraco) */
     .introduction {
         flex-direction: column;
         justify-content: center;
-        gap: 40px;
-        padding: 4rem 1.5rem;
+        gap: 20px; 
+        padding: 2rem 1.5rem;
+        min-height: auto; 
     }
 
-    .name {
-        align-items: center;
-        text-align: center;
-    }
+    .name { align-items: center; text-align: center; }
+    .name h1 { margin: 0; }
+    .name h2 { padding-top: 5px; }
 
+    .introduction h1 { font-size: clamp(40px, 12vw, 60px); }
+    .introduction h2 { font-size: clamp(18px, 5vw, 25px); }
+
+    /* Ajustes do Terminal (Removendo scroll) */
     .bash {
         width: 100%;
         height: auto;
+        aspect-ratio: auto; /* Remove espaço vago vertical */
     }
 
-    .introduction h1 {
-        font-size: clamp(40px, 12vw, 60px);
+    .body-bash {
+        overflow: hidden; /* Remove barra de rolagem */
+        padding: 15px; 
+        font-size: clamp(9px, 1.5vw, 18px); /* Letra menor no celular */
     }
 
-    .introduction h2 {
-        font-size: clamp(18px, 5vw, 25px);
+    /* Ajustes do Header Mobile */
+    .container-header {
+        justify-content: center;
+        padding: 0;
+        min-height: 60px;
     }
+
 }
